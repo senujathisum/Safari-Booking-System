@@ -141,7 +141,15 @@
     resetInterval();
 </script>
 
-<div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3rem; margin-bottom: 3rem;">
+<!-- Welcome Banner -->
+<div style="background-color: #a8cd56; padding: 2.5rem 3rem; border-radius: 12px; margin: 3rem auto 2rem auto; max-width: 900px; box-shadow: 4px 4px 15px rgba(0,0,0,0.3); text-align: center; color: #2c4c1a;">
+    <h2 style="font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Print', cursive; font-size: 3.5rem; margin-top: 0; margin-bottom: 1.5rem; font-weight: normal; letter-spacing: 1px;">Welcome to Yala National Park</h2>
+    <p style="font-family: Arial, sans-serif; font-size: 1.2rem; line-height: 1.6; margin: 0; text-align: left;">
+        This is leopard country, and they are the Lords of the Jungle! With a leopard density that's higher than anywhere else on this planet, these menacing predators prowl majestically in Yala, while elephants roam in their numbers with cautious deer scampering by their side
+    </p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
     
     <!-- Left Column: Green Information Block -->
     <div style="flex: 1; min-width: 300px; background-color: #5cb85c; padding: 2rem; border-radius: 8px; color: white; display: flex; flex-direction: column; justify-content: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.15);">
@@ -157,32 +165,37 @@
     </div>
 
     <!-- Right Column: Park Details -->
-    <div style="flex: 1; min-width: 300px; padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border); border-radius: 8px;">
-        <h3 style="color: var(--vintage-heading); margin-top: 0; border-bottom: 2px solid var(--vintage-border); padding-bottom: 10px; font-family: 'Georgia', serif;">Park Details</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
-            <tbody>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold; width: 40%;">Area</td><td style="padding: 8px 0;">378 sq miles</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Location</td><td style="padding: 8px 0;">260km South East of Colombo</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Entry points</td><td style="padding: 8px 0;">Gate1: Katagamuwa<br>Gate 2: Palatupana</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Aver.Temp</td><td style="padding: 8px 0;">26.4 °C (79.5 °F)</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Climate</td><td style="padding: 8px 0;">Dry most of the year</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Nearest city</td><td style="padding: 8px 0;">Kataragama</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Distance to nearest city</td><td style="padding: 8px 0;">30km - 40 minutes drive</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Best time to visit</td><td style="padding: 8px 0;">June to September</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Open hours</td><td style="padding: 8px 0;">6am to 6pm</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Coordinates</td><td style="padding: 8px 0;">6°22'22N 81°31'01E</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Made a Park in</td><td style="padding: 8px 0;">1st March 1938</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Distance from Kataragama</td><td style="padding: 8px 0;">Katagamuwa: 14Km<br>Palatupana: 41Km<br>Galge: 30Km</td></tr>
-                <tr style="border-bottom: 1px solid var(--vintage-border);"><td style="padding: 8px 0; font-weight: bold;">Nearest Hospital</td><td style="padding: 8px 0;">Debarawewa Government Hospital</td></tr>
-                <tr><td style="padding: 8px 0; font-weight: bold;">Head office</td><td style="padding: 8px 0;">Open from 9am to 6pm</td></tr>
-            </tbody>
-        </table>
+    <div style="flex: 1; min-width: 300px; background-color: #ffffff; border: 2px solid #5cb85c; border-radius: 12px; overflow: hidden; box-shadow: 4px 4px 15px rgba(0,0,0,0.15);">
+        <div style="background-color: #5cb85c; padding: 1.5rem; text-align: center;">
+            <h3 style="color: white; margin: 0; font-family: Arial, sans-serif; font-size: 2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Park Details</h3>
+        </div>
+        <div style="padding: 1.5rem;">
+            <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 1rem;">
+                <tbody>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a; width: 45%;">Area</td><td style="padding: 12px 8px; color: #444;">378 sq miles</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc; background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Location</td><td style="padding: 12px 8px; color: #444;">260km South East of Colombo</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Entry points</td><td style="padding: 12px 8px; color: #444;">Gate1: Katagamuwa<br>Gate 2: Palatupana</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc; background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Aver.Temp</td><td style="padding: 12px 8px; color: #444;">26.4 °C (79.5 °F)</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Climate</td><td style="padding: 12px 8px; color: #444;">Dry most of the year</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc; background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Nearest city</td><td style="padding: 12px 8px; color: #444;">Kataragama</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Distance to nearest city</td><td style="padding: 12px 8px; color: #444;">30km - 40 minutes drive</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc; background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Best time to visit</td><td style="padding: 12px 8px; color: #444;">June to September</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Open hours</td><td style="padding: 12px 8px; color: #444;">6am to 6pm</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc; background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Coordinates</td><td style="padding: 12px 8px; color: #444;">6°22'22N 81°31'01E</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Made a Park in</td><td style="padding: 12px 8px; color: #444;">1st March 1938</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc; background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Distance from Kataragama</td><td style="padding: 12px 8px; color: #444;">Katagamuwa: 14Km<br>Palatupana: 41Km<br>Galge: 30Km</td></tr>
+                    <tr style="border-bottom: 1px dashed #cccccc;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Nearest Hospital</td><td style="padding: 12px 8px; color: #444;">Debarawewa Government Hospital</td></tr>
+                    <tr style="background-color: #f9fdf9;"><td style="padding: 12px 8px; font-weight: bold; color: #2c4c1a;">Head office</td><td style="padding: 12px 8px; color: #444;">Open from 9am to 6pm</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
-<hr style="border: 1px dashed var(--vintage-border); margin: 3rem 0;">
-
-<h2 style="text-align: center; font-family: 'Georgia', serif; color: var(--vintage-heading);">Glimpses of the Safari</h2>
+<div style="text-align: center; margin: 4rem 0 3rem 0;">
+    <h2 style="display: inline-block; font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Print', cursive; font-size: 4rem; color: #2c4c1a; margin: 0; padding: 0 2rem 10px 2rem; border-bottom: 4px solid #5cb85c; letter-spacing: 2px;">Glimpses of the Safari</h2>
+    <p style="font-family: Arial, sans-serif; font-size: 1.2rem; color: #555; margin-top: 15px; font-style: italic;">Explore the breathtaking wildlife and scenic beauty captured in our park</p>
+</div>
 
 {% if gallery_images %}
 <div class="masonry-gallery">
