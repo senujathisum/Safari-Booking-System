@@ -3,26 +3,38 @@
 {% block title %}Tour Guides - Yala National Park{% endblock %}
 
 {% block content %}
-<h2>Tour Guides</h2>
-<p>Our experienced guides available for upcoming safaris.</p>
+<div style="text-align: center; margin: 2rem 0 3rem 0;">
+    <h2 style="display: inline-block; font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Print', cursive; font-size: 3.5rem; color: #2c4c1a; margin: 0; padding: 0 2rem 10px 2rem; border-bottom: 4px solid #5cb85c; letter-spacing: 2px;">Tour Guides</h2>
+    <p style="font-family: Arial, sans-serif; font-size: 1.2rem; color: #555; margin-top: 15px; font-style: italic;">Our experienced guides available for upcoming safaris.</p>
+</div>
 
 <div class="section-grid">
     {% for guide in guides %}
-    <div class="card">
-        <h2>{{ guide.first_name }} {{ guide.last_name }}</h2>
-        <p><strong>Status:</strong> {{ guide.status }}</p>
-        <p><strong>Shift:</strong> {{ guide.shift_start|time:"H:i" }} - {{ guide.shift_end|time:"H:i" }}</p>
-        <p><strong>Assigned Zones:</strong> 
-            {% for zone in guide.assigned_zones.all %}
-                {{ zone.name }}{% if not forloop.last %}, {% endif %}
-            {% empty %}
-                None assigned
-            {% endfor %}
-        </p>
-        <button onclick="alert('Edit Guide form coming soon!')">Edit Guide</button>
+    <div class="premium-card">
+        <h2 class="premium-header" style="font-size: 1.5rem;">{{ guide.first_name }} {{ guide.last_name }}</h2>
+        <div class="premium-body" style="font-size: 1.05rem; line-height: 1.6; color: #444;">
+            <p style="margin-top: 0;"><strong>Status:</strong> 
+                {% if guide.status == 'Available' %}
+                    <span style="color: #2c4c1a; font-weight: bold;">{{ guide.status }}</span>
+                {% else %}
+                    <span style="color: #a94442; font-weight: bold;">{{ guide.status }}</span>
+                {% endif %}
+            </p>
+            <p><strong>Shift:</strong> {{ guide.shift_start|time:"H:i" }} - {{ guide.shift_end|time:"H:i" }}</p>
+            <p><strong>Assigned Zones:</strong> 
+                {% for zone in guide.assigned_zones.all %}
+                    <span style="background-color: #dff0d8; border: 1px solid #d6e9c6; color: #2c4c1a; padding: 2px 6px; border-radius: 4px; font-size: 0.9rem;">{{ zone.name }}</span>
+                {% empty %}
+                    <em style="color: #999;">None assigned</em>
+                {% endfor %}
+            </p>
+            <button onclick="alert('Edit Guide form coming soon!')" style="margin-top: 1rem; width: 100%; padding: 10px; border-radius: 25px; background-color: #5cb85c; color: white; border: none; font-size: 1rem; cursor: pointer; transition: background-color 0.3s; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">Edit Guide</button>
+        </div>
     </div>
     {% empty %}
-    <p><em>No guides currently available.</em></p>
+    <div style="width: 100%; text-align: center; margin-top: 2rem;">
+        <p style="font-size: 1.2rem; color: #666;"><em>No guides currently available.</em></p>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

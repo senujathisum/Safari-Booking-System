@@ -3,8 +3,10 @@
 {% block title %}Animal Tracking - Yala National Park{% endblock %}
 
 {% block content %}
-<h2>Habitat Zones & Animal Tracking</h2>
-<p>Monitor all zones and the health status of animals within them.</p>
+<div style="text-align: center; margin: 2rem 0 3rem 0;">
+    <h2 style="display: inline-block; font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Print', cursive; font-size: 3.5rem; color: #2c4c1a; margin: 0; padding: 0 2rem 10px 2rem; border-bottom: 4px solid #5cb85c; letter-spacing: 2px;">Habitat Zones & Animal Tracking</h2>
+    <p style="font-family: Arial, sans-serif; font-size: 1.2rem; color: #555; margin-top: 15px; font-style: italic;">Monitor all zones and the health status of animals within them.</p>
+</div>
 
 <style>
     .map-container {
@@ -12,7 +14,8 @@
         max-width: 100%;
         margin: 2rem auto;
         overflow: hidden;
-        border: 2px solid var(--vintage-border);
+        border: 4px solid #5cb85c;
+        border-radius: 12px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         cursor: crosshair;
         position: relative;
@@ -29,15 +32,35 @@
     .map-container:hover img {
         transform: scale(3); /* Significant zoom */
     }
+    .premium-card {
+        background-color: #ffffff;
+        border: 2px solid #5cb85c;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+    }
+    .premium-header {
+        background-color: #5cb85c;
+        padding: 1.5rem;
+        text-align: center;
+        color: white;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .premium-body {
+        padding: 2rem;
+    }
 </style>
 
-<div style="margin: 3rem 0; padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
-    <h2 style="font-size: 2.5rem; color: var(--vintage-heading); margin-top: 0; margin-bottom: 1rem; border-bottom: 2px solid var(--vintage-border); padding-bottom: 10px;">Bird Watching</h2>
-    
-    <div style="display: block;">
-        <img src="https://static.wixstatic.com/media/991922_dab74e16565a4b328d21866e344b6c7d~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/991922_dab74e16565a4b328d21866e344b6c7d~mv2.jpg" alt="Bird Watching at Yala" style="float: right; width: 40%; min-width: 300px; margin-left: 2rem; margin-bottom: 1rem; border-radius: 4px; box-shadow: 2px 2px 10px rgba(0,0,0,0.15);">
-        
-        <p style="font-size: 0.95rem; line-height: 1.6; text-align: justify; margin: 0;">
+<div class="premium-card" style="margin: 3rem 0;">
+    <h2 class="premium-header">Bird Watching</h2>
+    <div class="premium-body" style="display: block;">
+        <img src="https://static.wixstatic.com/media/991922_dab74e16565a4b328d21866e344b6c7d~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/991922_dab74e16565a4b328d21866e344b6c7d~mv2.jpg" alt="Bird Watching at Yala" style="float: right; width: 40%; min-width: 300px; margin-left: 2rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);">
+        <p style="font-size: 1.05rem; line-height: 1.6; text-align: justify; margin: 0; color: #444;">
             The number of water birds inhabiting the wetlands of Yala is around 90, and roughly half of them are migrants. These include waterfowls (Lesser Whistling Duck, Garganey), Cormorants (Little Cormorant, Indian Cormorant), large waterbirds (Grey Heron, Black-headed Ibis, Eurasian Spoonbill, Asian Openbill, Painted Stork), medium-sized waders Tringa spp., and small waders Charadrius spp. Black-necked Stork and Lesser Adjutant are some of the rare birds that can be seen in the park. The migrant Great White Pelican and resident Spot-billed Pelican have also been sighted at Yala. Other water birds attracted to the Yala lagoons include Lesser Flamingo and pelicans, as well as rare species such as Purple Heron, Night herons, Egrets, Purple Swamphen and the Oriental Darter. Thousands of waterfowls migrate to the lagoons of Yala during the northeast monsoon. They are Northern Pintail, White-winged Tern, Eurasian Curlew, Whimbrel, Godwits, and Ruddy Turnstone. The visiting species mingle with residing Lesser Whistling Duck, Yellow-wattled Lapwing, Red-wattled Lapwing, and Great Stone-curlew. Rock Pigeon, Barred Buttonquail, Indian Peafowl, Black Stork, Black-winged Stilt, and Greater Flamingo are among the other bird species that call Yala their home. Crested Serpent-eagle and White-bellied Sea Eagle are the raptors of the park. The forest birds are Orange-breasted Green Pigeon, Hornbills, Old World flycatchers, Asian Paradise-flycatcher, Asian barbets, and Orioles. If you are not into bird watching, these magnificent flying machines invite you to study them, get to know them and be wowed by them.
         </p>
         <div style="clear: both;"></div>
@@ -46,39 +69,42 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 3rem 0;">
     <!-- Left Side: Most Popular Sites -->
-    <div style="flex: 1; min-width: 300px; padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
-        <h2 style="font-size: 2.2rem; color: var(--vintage-heading); margin-top: 0; margin-bottom: 1rem; border-bottom: 2px solid var(--vintage-border); padding-bottom: 10px; text-transform: uppercase;">Most Popular Sites in the Park</h2>
-        
-        <h3 style="font-size: 1.6rem; color: var(--vintage-accent); margin-top: 1.5rem; margin-bottom: 0.5rem;">Sithulpauwwa</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; text-align: justify; margin: 0 0 1.5rem 0;">
-            The name Sithulpauwwa is derived from the word 'Chittalapabbata' which means the hill of the quiet mind. The ancient rock temple is a place of worship for devotees. It is believed that in ancient times this rock temple housed a total of 12,000 monks.
-        </p>
+    <div class="premium-card" style="flex: 1; min-width: 300px;">
+        <h2 class="premium-header" style="font-size: 1.5rem;">Most Popular Sites in the Park</h2>
+        <div class="premium-body">
+            <h3 style="font-size: 1.6rem; color: #2c4c1a; margin-top: 0; margin-bottom: 0.5rem; border-bottom: 2px dashed #cccccc; padding-bottom: 5px;">Sithulpauwwa</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; text-align: justify; margin: 0 0 2rem 0; color: #444;">
+                The name Sithulpauwwa is derived from the word 'Chittalapabbata' which means the hill of the quiet mind. The ancient rock temple is a place of worship for devotees. It is believed that in ancient times this rock temple housed a total of 12,000 monks.
+            </p>
 
-        <h3 style="font-size: 1.6rem; color: var(--vintage-accent); margin-top: 1.5rem; margin-bottom: 0.5rem;">Magul Maha Viharaya</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; text-align: justify; margin: 0;">
-            Located to the south of Sithulpauwa, Magul Maha Viharaya is believed to have provided the setting for the marriage of King KavanTissa to Vihara Maha Devi. One could combine a visit to Sithulpauwe and Magul MahaViharaya as they are located closely together.
-        </p>
+            <h3 style="font-size: 1.6rem; color: #2c4c1a; margin-top: 0; margin-bottom: 0.5rem; border-bottom: 2px dashed #cccccc; padding-bottom: 5px;">Magul Maha Viharaya</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; text-align: justify; margin: 0; color: #444;">
+                Located to the south of Sithulpauwa, Magul Maha Viharaya is believed to have provided the setting for the marriage of King KavanTissa to Vihara Maha Devi. One could combine a visit to Sithulpauwe and Magul MahaViharaya as they are located closely together.
+            </p>
+        </div>
     </div>
 
     <!-- Right Side: Beach Walks and Safari Rides -->
     <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 2rem;">
-        
         <!-- Beach Walks Tile -->
-        <div style="padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
-            <h3 style="font-size: 1.8rem; color: var(--vintage-heading); margin-top: 0; margin-bottom: 0.5rem; text-transform: uppercase;">Beach Walks</h3>
-            <p style="font-size: 0.95rem; line-height: 1.6; text-align: justify; margin: 0;">
-                While most of the long coastal stretch that hugs the park is out of bounds for the human kind, the park lets you get off at designated places. It gives you a chance to exercise your legs and take a stroll on the golden sandy beaches. The primary beach spot open to public was the location for one of the bungalows which was wiped out by the Asian Tsunami along with its occupants. Remnants of the devastation and a memorial for the dead will offer you a profound moment of silence and solitude.
-            </p>
+        <div class="premium-card">
+            <h3 class="premium-header" style="font-size: 1.5rem;">Beach Walks</h3>
+            <div class="premium-body">
+                <p style="font-size: 1.05rem; line-height: 1.6; text-align: justify; margin: 0; color: #444;">
+                    While most of the long coastal stretch that hugs the park is out of bounds for the human kind, the park lets you get off at designated places. It gives you a chance to exercise your legs and take a stroll on the golden sandy beaches. The primary beach spot open to public was the location for one of the bungalows which was wiped out by the Asian Tsunami along with its occupants. Remnants of the devastation and a memorial for the dead will offer you a profound moment of silence and solitude.
+                </p>
+            </div>
         </div>
 
         <!-- Safari Rides Tile -->
-        <div style="padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
-            <h3 style="font-size: 1.8rem; color: var(--vintage-heading); margin-top: 0; margin-bottom: 0.5rem; text-transform: uppercase;">Safari Rides</h3>
-            <p style="font-size: 0.95rem; line-height: 1.6; text-align: justify; margin: 0;">
-                Obviously, your trip to Yala revolves around the safari ride that takes you on an experience of a lifetime. Remember, this is no circus and animals are not on duty waiting for you. It’s that feeling of uncertainty and adventure that makes it a wildlife experience. To catch the inhabitants of the jungle you need to be there at the best time and thread patiently.
-            </p>
+        <div class="premium-card">
+            <h3 class="premium-header" style="font-size: 1.5rem;">Safari Rides</h3>
+            <div class="premium-body">
+                <p style="font-size: 1.05rem; line-height: 1.6; text-align: justify; margin: 0; color: #444;">
+                    Obviously, your trip to Yala revolves around the safari ride that takes you on an experience of a lifetime. Remember, this is no circus and animals are not on duty waiting for you. It’s that feeling of uncertainty and adventure that makes it a wildlife experience. To catch the inhabitants of the jungle you need to be there at the best time and thread patiently.
+                </p>
+            </div>
         </div>
-        
     </div>
 </div>
 
@@ -103,38 +129,40 @@
 </script>
 
 {% for habitat in habitats %}
-<div style="margin-bottom: 3rem;">
-    <h3 style="color: var(--vintage-heading); font-family: 'Georgia', serif; border-bottom: 2px solid var(--vintage-border); padding-bottom: 5px;">{{ habitat.name }}</h3>
-    <p style="font-style: italic; color: var(--vintage-border);">{{ habitat.description }}</p>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>Species</th>
-                <th>Name / ID</th>
-                <th>Health Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for animal in habitat.animals.all %}
-            <tr>
-                <td>{{ animal.species }}</td>
-                <td>{{ animal.name|default:"Un-named" }}</td>
-                <td>
-                    {% if animal.health_status == 'Healthy' %}
-                        <span style="color: green; font-weight: bold;">{{ animal.health_status }}</span>
-                    {% else %}
-                        <span style="color: #b22222; font-weight: bold;">{{ animal.health_status }}</span>
-                    {% endif %}
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="3"><em>No animals tracked in this zone yet.</em></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div class="premium-card" style="margin-bottom: 3rem;">
+    <h3 class="premium-header">{{ habitat.name }}</h3>
+    <div class="premium-body" style="padding-top: 1rem;">
+        <p style="font-style: italic; color: #666; text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">{{ habitat.description }}</p>
+        
+        <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 1rem;">
+            <thead>
+                <tr>
+                    <th style="background-color: #5cb85c; color: white; padding: 12px 8px; text-align: left; border: 1px solid #4cae4c;">Species</th>
+                    <th style="background-color: #5cb85c; color: white; padding: 12px 8px; text-align: left; border: 1px solid #4cae4c;">Name / ID</th>
+                    <th style="background-color: #5cb85c; color: white; padding: 12px 8px; text-align: left; border: 1px solid #4cae4c;">Health Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for animal in habitat.animals.all %}
+                <tr style="border-bottom: 1px dashed #cccccc; background-color: {% cycle '#ffffff' '#f9fdf9' %};">
+                    <td style="padding: 12px 8px; color: #444; font-weight: bold;">{{ animal.species }}</td>
+                    <td style="padding: 12px 8px; color: #444;">{{ animal.name|default:"Un-named" }}</td>
+                    <td style="padding: 12px 8px;">
+                        {% if animal.health_status == 'Healthy' %}
+                            <span style="color: #2c4c1a; font-weight: bold; background-color: #dff0d8; padding: 4px 8px; border-radius: 4px; border: 1px solid #d6e9c6;">{{ animal.health_status }}</span>
+                        {% else %}
+                            <span style="color: #a94442; font-weight: bold; background-color: #f2dede; padding: 4px 8px; border-radius: 4px; border: 1px solid #ebccd1;">{{ animal.health_status }}</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" style="padding: 12px 8px; text-align: center; color: #666;"><em>No animals tracked in this zone yet.</em></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}
