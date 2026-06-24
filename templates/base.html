@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}The Wildlife Safari Park{% endblock %}</title>
+    <title>{% block title %}Yala National Park{% endblock %}</title>
     <style>
         :root {
             --vintage-bg: #f4ecd8;
@@ -158,8 +158,8 @@
         {% if site_settings and site_settings.logo_url %}
             <img src="{{ site_settings.logo_url }}" alt="Site Logo" class="site-logo">
         {% endif %}
-        <h1>The Wildlife Safari Park</h1>
-        <p class="subtitle">Yala Wild Safari Park System</p>
+        <h1>Yala National Park</h1>
+        <p class="subtitle">Yala Central Administration</p>
         <nav>
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'safari_app:bookings' %}">Bookings</a>
@@ -174,7 +174,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Yala Wild Safari Park. All rights reserved.
+        &copy; 2026 Yala National Park. All rights reserved.
     </footer>
 </body>
 </html>
