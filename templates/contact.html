@@ -6,13 +6,24 @@
 <h2 style="font-family: 'Georgia', serif; color: var(--vintage-heading); border-bottom: 2px solid var(--vintage-border); padding-bottom: 10px;">Stay Connected With Us</h2>
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
-    <!-- Contact Info -->
-    <div style="flex: 1; min-width: 300px; padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
-        <h3 style="color: var(--vintage-heading); margin-top: 0;">Official Contact Details</h3>
-        <p><strong>Department of Wildlife Conservation Head Office</strong></p>
-        <p>📍 <strong>Address:</strong><br> 811A, Jayanthipura, Battaramulla, Sri Lanka</p>
-        <p>📞 <strong>Phone:</strong><br> +94 11 2 888 585</p>
-        <p>✉️ <strong>Email:</strong><br> <a href="mailto:info@yalasrilanka.lk" style="color: var(--vintage-accent); text-decoration: none; font-weight: bold;">info@yalasrilanka.lk</a></p>
+    <!-- Left Column: Contact Info & Conservation -->
+    <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 2rem;">
+        
+        <!-- Official Contact Details Tile -->
+        <div style="padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
+            <h3 style="color: var(--vintage-heading); margin-top: 0;">Official Contact Details</h3>
+            <p><strong>Department of Wildlife Conservation Head Office</strong></p>
+            <p>📍 <strong>Address:</strong><br> 811A, Jayanthipura, Battaramulla, Sri Lanka</p>
+            <p>📞 <strong>Phone:</strong><br> +94 11 2 888 585</p>
+            <p>✉️ <strong>Email:</strong><br> <a href="mailto:info@yalasrilanka.lk" style="color: var(--vintage-accent); text-decoration: none; font-weight: bold;">info@yalasrilanka.lk</a></p>
+        </div>
+
+        <!-- Save a Wild Life Tile -->
+        <div style="padding: 2rem; background-color: #faf0e6; border: 1px dashed var(--vintage-border);">
+            <h3 style="color: var(--vintage-accent); margin-top: 0;">Save a Wild Life with Every Ticket</h3>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">At Yala National Park, your adventure fuels our mission. A dedicated portion of every single safari ticket is directly channeled into our frontline conservation programs. From funding anti-poaching patrols and providing vital veterinary care for injured animals, to expanding crucial habitat restoration projects—your visit empowers us to protect and nurture Sri Lanka's incredible biodiversity for generations to come. Thank you for being a guardian of the wild.</p>
+        </div>
+
     </div>
 
     <!-- Contact Form -->
@@ -45,6 +56,10 @@
 
             <button type="submit" style="align-self: flex-start; padding: 12px 24px;">Send Message</button>
         </form>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+            <img src="https://img.freepik.com/premium-vector/world-wildlife-day-logo-design-template-march-3_249011-1729.jpg?w=740" alt="World Wildlife Day" style="max-width: 100%; border-radius: 4px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);">
+        </div>
     </div>
 </div>
 {% endblock %}
