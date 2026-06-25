@@ -16,7 +16,7 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'guest_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Full Name'}),
             'contact_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email Address'}),
-            'contact_phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone Number'}),
+            'contact_phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '07XXXXXXXX'}),
             'number_of_guests': forms.NumberInput(attrs={'class': 'form-control', 'min': '1', 'max': '10'}),
             'pricing_tier': forms.Select(attrs={'class': 'form-control'}),
         }

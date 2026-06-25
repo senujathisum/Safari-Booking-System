@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 class HabitatZone(models.Model):
     name = models.CharField(max_length=100)
@@ -42,8 +43,11 @@ class Booking(models.Model):
         ('Cancelled', 'Cancelled'),
     ]
     guest_name = models.CharField(max_length=100)
-    contact_email = models.EmailField(default='guest@example.com')
-    contact_phone = models.CharField(max_length=20, default='0000000000')
+    contact_email = models.EmailField()
+    contact_phone = models.CharField(
+        max_length=10, 
+        validators=[RegexValidator(regex=r'^07\d{8}$', message='Phone number must be exactly 10 digits and start with 07.')]
+    )
     number_of_guests = models.PositiveIntegerField(default=1)
     booking_date = models.DateField()
     slot_time = models.TimeField()
