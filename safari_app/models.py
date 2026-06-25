@@ -23,6 +23,8 @@ class TourGuide(models.Model):
     shift_end = models.TimeField()
     status = models.CharField(max_length=20, choices=[('Active', 'Active'), ('On Leave', 'On Leave')], default='Active')
     assigned_zones = models.ManyToManyField(HabitatZone, related_name='guides')
+    profile_image = models.URLField(max_length=500, default='https://static.vecteezy.com/system/resources/previews/036/190/419/original/business-man-blank-profile-image-with-beard-vector.jpg')
+    description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
