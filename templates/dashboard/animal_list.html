@@ -11,7 +11,6 @@
         <thead>
             <tr>
                 <th>Species</th>
-                <th>Name</th>
                 <th>Habitat Zone</th>
                 <th>Health Status</th>
                 <th>Actions</th>
@@ -21,7 +20,6 @@
             {% for animal in animals %}
             <tr>
                 <td><strong>{{ animal.species }}</strong></td>
-                <td>{{ animal.name|default:"-" }}</td>
                 <td>{{ animal.habitat.name }}</td>
                 <td>
                     <span style="color: {% if animal.health_status == 'Healthy' %}#5cb85c{% else %}#f0ad4e{% endif %}; font-weight: bold;">

@@ -111,7 +111,7 @@ class AnimalListView(StaffRequiredMixin, ListView):
 class AnimalCreateView(StaffRequiredMixin, CreateView):
     model = Animal
     template_name = 'dashboard/generic_form.html'
-    fields = '__all__'
+    fields = ['species', 'health_status', 'habitat']
     success_url = reverse_lazy('safari_app:dashboard_animals')
 
     def get_context_data(self, **kwargs):
@@ -122,7 +122,7 @@ class AnimalCreateView(StaffRequiredMixin, CreateView):
 class AnimalUpdateView(StaffRequiredMixin, UpdateView):
     model = Animal
     template_name = 'dashboard/generic_form.html'
-    fields = '__all__'
+    fields = ['species', 'health_status', 'habitat']
     success_url = reverse_lazy('safari_app:dashboard_animals')
 
     def get_context_data(self, **kwargs):
