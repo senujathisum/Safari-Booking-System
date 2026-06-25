@@ -12,11 +12,12 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ['guest_name', 'contact_email', 'contact_phone', 'number_of_guests', 'booking_date', 'slot_time', 'pricing_tier']
+        fields = ['guest_name', 'contact_email', 'contact_phone', 'number_of_guests', 'booking_date', 'slot_time', 'pricing_tier', 'selected_blocks']
         widgets = {
             'guest_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Full Name'}),
             'contact_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email Address'}),
             'contact_phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '07XXXXXXXX'}),
             'number_of_guests': forms.NumberInput(attrs={'class': 'form-control', 'min': '1', 'max': '10'}),
-            'pricing_tier': forms.Select(attrs={'class': 'form-control'}),
+            'pricing_tier': forms.Select(attrs={'class': 'form-control', 'id': 'id_pricing_tier'}),
+            'selected_blocks': forms.CheckboxSelectMultiple(),
         }
