@@ -128,41 +128,5 @@
     });
 </script>
 
-{% for habitat in habitats %}
-<div class="premium-card" style="margin-bottom: 3rem;">
-    <h3 class="premium-header">{{ habitat.name }}</h3>
-    <div class="premium-body" style="padding-top: 1rem;">
-        <p style="font-style: italic; color: #666; text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">{{ habitat.description }}</p>
-        
-        <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 1rem;">
-            <thead>
-                <tr>
-                    <th style="background-color: #5cb85c; color: white; padding: 12px 8px; text-align: left; border: 1px solid #4cae4c;">Species</th>
-                    <th style="background-color: #5cb85c; color: white; padding: 12px 8px; text-align: left; border: 1px solid #4cae4c;">Name / ID</th>
-                    <th style="background-color: #5cb85c; color: white; padding: 12px 8px; text-align: left; border: 1px solid #4cae4c;">Health Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for animal in habitat.animals.all %}
-                <tr style="border-bottom: 1px dashed #cccccc; background-color: {% cycle '#ffffff' '#f9fdf9' %};">
-                    <td style="padding: 12px 8px; color: #444; font-weight: bold;">{{ animal.species }}</td>
-                    <td style="padding: 12px 8px; color: #444;">{{ animal.name|default:"Un-named" }}</td>
-                    <td style="padding: 12px 8px;">
-                        {% if animal.health_status == 'Healthy' %}
-                            <span style="color: #2c4c1a; font-weight: bold; background-color: #dff0d8; padding: 4px 8px; border-radius: 4px; border: 1px solid #d6e9c6;">{{ animal.health_status }}</span>
-                        {% else %}
-                            <span style="color: #a94442; font-weight: bold; background-color: #f2dede; padding: 4px 8px; border-radius: 4px; border: 1px solid #ebccd1;">{{ animal.health_status }}</span>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="3" style="padding: 12px 8px; text-align: center; color: #666;"><em>No animals tracked in this zone yet.</em></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
-{% endfor %}
+
 {% endblock %}
