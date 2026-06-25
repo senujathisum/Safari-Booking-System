@@ -8,7 +8,8 @@ def index(request):
     return render(request, 'index.html', {'gallery_images': gallery_images})
 
 def packages(request):
-    return render(request, 'packages.html')
+    habitats = HabitatZone.objects.all().prefetch_related('animals')
+    return render(request, 'packages.html', {'habitats': habitats})
 
 def book_now(request):
     initial_tier = request.GET.get('tier', 'Standard')
@@ -20,7 +21,8 @@ def book_now(request):
     else:
         form = BookingForm(initial={'pricing_tier': initial_tier})
     
-    return render(request, 'book_now.html', {'form': form})
+    habitats = HabitatZone.objects.all().prefetch_related('animals')
+    return render(request, 'book_now.html', {'form': form, 'habitats': habitats})
 
 def booking_success(request):
     return render(request, 'booking_success.html')
