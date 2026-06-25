@@ -1,0 +1,25 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; border: none;">Gallery Images</h1>
+        <a href="{% url 'safari_app:dashboard_gallery_add' %}" class="btn">+ Add Image</a>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+        {% for image in images %}
+        <div style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: center;">
+            <img src="{{ image.image_url }}" alt="{{ image.title }}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;">
+            <strong>{{ image.title }}</strong><br>
+            <div style="margin-top: 10px;">
+                <a href="{% url 'safari_app:dashboard_gallery_edit' image.id %}" class="btn" style="padding: 4px 8px; font-size: 0.8em;">Edit</a>
+                <a href="{% url 'safari_app:dashboard_gallery_delete' image.id %}" class="btn btn-danger" style="padding: 4px 8px; font-size: 0.8em;">Delete</a>
+            </div>
+        </div>
+        {% empty %}
+        <p>No gallery images found.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card" style="max-width: 600px; text-align: center; margin: 50px auto;">
+    <h1 style="color: #d9534f; border-bottom: none;">Confirm Deletion</h1>
+    <p style="font-size: 1.2em; margin-bottom: 30px;">Are you sure you want to delete <strong>{{ object }}</strong>?</p>
+    <p style="color: #777; margin-bottom: 30px;">This action cannot be undone.</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="javascript:history.back()" class="btn" style="background-color: #8c8c8c; border-color: #777; margin-left: 10px;">Cancel</a>
+    </form>
+</div>
+{% endblock %}

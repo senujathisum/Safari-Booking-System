@@ -1,0 +1,50 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; border: none;">All Bookings</h1>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Guest Name</th>
+                <th>Contact</th>
+                <th>Tier</th>
+                <th>Status</th>
+                <th>Assigned Guide</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.booking_date|date:"Y-m-d" }}</td>
+                <td>{{ booking.slot_time|time:"H:i" }}</td>
+                <td>{{ booking.guest_name }}<br><small>{{ booking.number_of_guests }} guests</small></td>
+                <td><small>{{ booking.contact_phone }}<br>{{ booking.contact_email }}</small></td>
+                <td>{{ booking.pricing_tier }}</td>
+                <td>
+                    <span style="padding: 4px 8px; border-radius: 12px; font-size: 0.85em; 
+                        {% if booking.status == 'Pending' %}background-color: #f0ad4e; color: white;
+                        {% elif booking.status == 'Confirmed' %}background-color: #5bc0de; color: white;
+                        {% elif booking.status == 'Completed' %}background-color: #5cb85c; color: white;
+                        {% else %}background-color: #d9534f; color: white;{% endif %}">
+                        {{ booking.status }}
+                    </span>
+                </td>
+                <td>{{ booking.assigned_guide|default:"None" }}</td>
+                <td>
+                    <a href="{% url 'safari_app:dashboard_booking_edit' booking.id %}" class="btn" style="padding: 4px 8px; font-size: 0.85em;">Edit Status/Guide</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="8">No bookings found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

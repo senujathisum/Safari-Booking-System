@@ -1,0 +1,50 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; border: none;">Tour Guides</h1>
+        <a href="{% url 'safari_app:dashboard_guide_add' %}" class="btn">+ Add Guide</a>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Shift</th>
+                <th>Status</th>
+                <th>Assigned Zones</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guide in guides %}
+            <tr>
+                <td><img src="{{ guide.profile_image }}" alt="Profile" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"></td>
+                <td>{{ guide.first_name }} {{ guide.last_name }}</td>
+                <td>{{ guide.shift_start|time:"H:i" }} - {{ guide.shift_end|time:"H:i" }}</td>
+                <td>
+                    <span style="color: {% if guide.status == 'Active' %}#5cb85c{% else %}#d9534f{% endif %}; font-weight: bold;">
+                        {{ guide.status }}
+                    </span>
+                </td>
+                <td>
+                    {% for zone in guide.assigned_zones.all %}
+                        {{ zone.name }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        None
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="{% url 'safari_app:dashboard_guide_edit' guide.id %}" class="btn" style="padding: 4px 8px; font-size: 0.85em;">Edit</a>
+                    <a href="{% url 'safari_app:dashboard_guide_delete' guide.id %}" class="btn btn-danger" style="padding: 4px 8px; font-size: 0.85em;">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="6">No guides found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

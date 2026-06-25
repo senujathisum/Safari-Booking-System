@@ -1,0 +1,35 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; border: none;">Habitat Zones</h1>
+        <a href="{% url 'safari_app:dashboard_habitat_add' %}" class="btn">+ Add Habitat Zone</a>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Zone Name</th>
+                <th>Description</th>
+                <th>Animals in Zone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for habitat in habitats %}
+            <tr>
+                <td><strong>{{ habitat.name }}</strong></td>
+                <td>{{ habitat.description|truncatewords:15 }}</td>
+                <td>{{ habitat.animals.count }} species</td>
+                <td>
+                    <a href="{% url 'safari_app:dashboard_habitat_edit' habitat.id %}" class="btn" style="padding: 4px 8px; font-size: 0.85em;">Edit</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No habitat zones found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

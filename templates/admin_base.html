@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin Dashboard - Yala National Park{% endblock %}</title>
+    <style>
+        :root {
+            --vintage-bg: #f4ecd8;
+            --vintage-text: #3c3a32;
+            --vintage-accent: #6b8e23; /* Olive Drab */
+            --vintage-border: #8b7355;
+            --vintage-heading: #556b2f; /* Dark Olive Green */
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--vintage-bg);
+            color: var(--vintage-text);
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient(var(--vintage-bg) 60%, #e6d8b8 100%);
+            min-height: 100vh;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: rgba(107, 142, 35, 0.1);
+            border-right: 4px solid #5cb85c;
+            padding: 2rem 1rem;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar h2 {
+            font-family: 'Georgia', serif;
+            color: var(--vintage-heading);
+            margin-top: 0;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 2px solid var(--vintage-border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            color: var(--vintage-heading);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: rgba(107, 142, 35, 0.2);
+            border-color: var(--vintage-accent);
+        }
+        .sidebar .logout-btn {
+            margin-top: auto;
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+        }
+        .sidebar .logout-btn:hover {
+            background-color: #c9302c;
+            color: white;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 2rem 3rem;
+            overflow-y: auto;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid var(--vintage-border);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-family: 'Georgia', serif;
+            color: var(--vintage-heading);
+            border-bottom: 2px solid var(--vintage-border);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .btn {
+            background-color: var(--vintage-accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: var(--vintage-heading);
+        }
+        .btn-danger {
+            background-color: #d9534f;
+        }
+        .btn-danger:hover {
+            background-color: #c9302c;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+        }
+        th {
+            background-color: #f8f8f8;
+            color: #333;
+            font-family: 'Georgia', serif;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #5cb85c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+        }
+        .helptext {
+            font-size: 0.85em;
+            color: #777;
+            display: block;
+            margin-top: 4px;
+        }
+        .errorlist {
+            color: #a94442;
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Yala Admin</h2>
+        <a href="{% url 'safari_app:dashboard_home' %}">Dashboard Home</a>
+        <a href="{% url 'safari_app:dashboard_bookings' %}">Manage Bookings</a>
+        <a href="{% url 'safari_app:dashboard_guides' %}">Tour Guides</a>
+        <a href="{% url 'safari_app:dashboard_habitats' %}">Habitat Zones</a>
+        <a href="{% url 'safari_app:dashboard_animals' %}">Animals</a>
+        <a href="{% url 'safari_app:dashboard_gallery' %}">Gallery Images</a>
+        <a href="{% url 'safari_app:dashboard_settings' %}">Site Settings</a>
+        <a href="{% url 'index' %}" style="margin-top: 20px; border-top: 1px solid #ccc; border-radius: 0;">Back to Website</a>
+    </div>
+    
+    <div class="main-content">
+        {% if messages %}
+            {% for message in messages %}
+                <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: white; background-color: {% if message.tags == 'error' %}#d9534f{% else %}#5cb85c{% endif %};">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

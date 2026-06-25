@@ -1,0 +1,27 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card" style="max-width: 600px;">
+    <h1 style="margin-top: 0;">Site Settings</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="logo_url">Site Logo URL</label>
+            <input type="url" name="logo_url" id="logo_url" value="{{ settings.logo_url|default:'' }}" class="form-control" placeholder="https://example.com/logo.png">
+            <span class="helptext">Paste the direct URL to the logo image you want to display on the website header.</span>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button type="submit" class="btn">Save Settings</button>
+        </div>
+    </form>
+    
+    {% if settings.logo_url %}
+    <div style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px;">
+        <h3>Current Logo Preview:</h3>
+        <img src="{{ settings.logo_url }}" alt="Logo Preview" style="max-width: 100%; max-height: 150px; border: 1px solid #ccc; padding: 10px; background-color: #fdfaf3;">
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

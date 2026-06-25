@@ -1,0 +1,41 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; border: none;">Animals</h1>
+        <a href="{% url 'safari_app:dashboard_animal_add' %}" class="btn">+ Add Animal</a>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Species</th>
+                <th>Name</th>
+                <th>Habitat Zone</th>
+                <th>Health Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animals %}
+            <tr>
+                <td><strong>{{ animal.species }}</strong></td>
+                <td>{{ animal.name|default:"-" }}</td>
+                <td>{{ animal.habitat.name }}</td>
+                <td>
+                    <span style="color: {% if animal.health_status == 'Healthy' %}#5cb85c{% else %}#f0ad4e{% endif %}; font-weight: bold;">
+                        {{ animal.health_status }}
+                    </span>
+                </td>
+                <td>
+                    <a href="{% url 'safari_app:dashboard_animal_edit' animal.id %}" class="btn" style="padding: 4px 8px; font-size: 0.85em;">Edit</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="5">No animals found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
